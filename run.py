@@ -1,3 +1,9 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import pyfiglet
+import time
+
+def startGame():
+    
+    welcome = pyfiglet.figlet_format("Walkers")
+    print (welcome)
+    print ("A Zombie Text Adventure by Miriam Payne")
+    print ("Survive the Zombie Apocalypse!!")
