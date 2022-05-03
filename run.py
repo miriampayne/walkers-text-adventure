@@ -1,3 +1,4 @@
+# import pyfiglet module
 import pyfiglet
 import time
 
