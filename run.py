@@ -6,6 +6,8 @@ from random import randint
 #GLOBAL VARIABLE DECLARATION
 shotgun = False
 gun = False
+name = input("Please confirm your name:\n")
+age = int(input("Please confirm your age:\n"))
 
 #Start Game
 def startGame():
@@ -17,8 +19,8 @@ def startGame():
 
     time.sleep(2)
 
-    name = input("Please confirm your name:\n")
-    age = int(input("Please confirm your age:\n"))
+    print(name)
+    print(age)
 
     time.sleep(1)
     if age > 0 and age < 12:
