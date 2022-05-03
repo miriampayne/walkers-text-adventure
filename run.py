@@ -7,6 +7,7 @@ from random import randint
 shotgun = False
 gun = False
 
+#Start Game
 def startGame():
     
     welcome = pyfiglet.figlet_format("Walkers")
@@ -16,15 +17,15 @@ def startGame():
 
     time.sleep(2)
 
-    name = input("Please confirm your name: ")
-    age = int(input("Please confirm your age: "))
+    name = input("Please confirm your name:\n")
+    age = int(input("Please confirm your age:\n"))
 
     time.sleep(1)
-    if age >0 and age < 12:
+    if age > 0 and age < 12:
         print("You're young ... chances of survival are slim ... use size and speed to your advantage")
     elif age >= 12 and age <75:
         print ("You're going to need a good aim ... fair survival if you're a good shot")
-    elif age >=75:
+    elif age >= 75:
         print ("You're as slow as the walkers ... I hate to break it to you but your chances are slim")
 
     time.sleep(1)
@@ -58,11 +59,11 @@ def startGame():
 startGame()
 
 #Step 1: Get first action
-action = input("Fight or Flight Response?").upper()
+action = input("Fight or Run?\n").upper()
 while action not in ["FIGHT", "RUN"]:
     time.sleep(1)
     print ("That is not a valid action")
-    action = input("Fight or Run?").upper()
+    action = input("Fight or Run?\n").upper()
 
 if action == "FIGHT":
     if age >= 12:
@@ -97,12 +98,12 @@ if score == 2:
     print ("You come across an abandoned house, an old barn and a boarded-up store")
 
     time.sleep(1)
-    choice = input("Do you enter the house, barn or the store?").upper()
+    choice = input("Do you enter the house, barn or the store?\n").upper()
 
-    while choice not in["House", "Barn", "Store"]:
+    while choice not in["HOUSE", "BARN", "STORE"]:
         time.sleep(1)
         print ("Sorry. I don't understand")
-        choice = input("Do you enter the house or the store?").upper()
+        choice = input("Do you enter the house or the barn or the store?\n").upper()
 
     if choice == "HOUSE":
         time.sleep(1)
@@ -179,5 +180,3 @@ if score == 3:
         print ("You fired all your shots and now the zombies are moving closer")
         score = 4
 
-#Step 4: Call main menu procedure
-startGame()
