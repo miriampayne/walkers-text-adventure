@@ -2,6 +2,10 @@
 import pyfiglet
 import time
 
+#GLOBAL VARIABLE DECLARATION
+shotgun = False
+gun = False
+
 def startGame():
     
     welcome = pyfiglet.figlet_format("Walkers")
