@@ -14,5 +14,40 @@ def startGame():
     name = input("Please confirm your name: ")
     age = int(input("Please confirm your age: "))
 
+    time.sleep(1)
+    if age >0 and age < 12:
+        print("You're young ... chances of survival are slim ... use size and speed to your advantage")
+    elif age >= 12 and age <75:
+        print ("You're going to need a good aim ... fair survival if you're a good shot")
+    elif age >=75:
+        print ("You're as slow as the walkers ... I hate to break it to you but your chances are slim")
+
+    time.sleep(1)
+    print ("Try and survive")
+
+    time.sleep(1)
+    print ("Chapter 1")
+
+    time.sleep(1)
+    print ("...")
+
+    time.sleep(1)
+
+    print ("You walk into an abandoned Dublin city center tower block car park")
+    time.sleep(1)
+
+    print ("A dodgy vaccine for the pandemic has turned 95% the population into a flesh eating zombies outbreak.")
+    time.sleep(1)
+
+    print ("Your sat nav shows you are 8 miles from a safe haven")
+    time.sleep(1)
+
+    time.sleep(1)
+
+    print("")
+    print ("A zombie horde appears... you grab your hurley from your backpack")
+
+    time.sleep(2)
+
 #Step 0: Call main menu procedure
 startGame()
