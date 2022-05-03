@@ -80,5 +80,52 @@ elif action == "RUN":
     else:
         print ("You run from the zombie")
         time.sleep(1)
-        print ("Your experienced legs carry you to safety")
+        print ("Your athletic legs carry you to safety")
         score = 2
+
+#Step 2 only happens if you have survived with a score of 2 now
+if score == 2:
+    time.sleep(1)
+    print ("Chapter 2: ... ") 
+    time.sleep(1)
+
+    print ("You come across an abandoned house, an old barn and a boarded-up store")
+
+    time.sleep(1)
+    choice = input("Do you enter the house, barn or the store?").upper()
+
+    while choice not in["House", "Barn", "Store"]:
+        time.sleep(1)
+        print ("Sorry. I don't understand")
+        choice = input("Do you enter the house or the store?").upper()
+
+    if choice == "HOUSE":
+        time.sleep(1)
+        print("You enter the house, rummaging around ... ")
+        time.sleep(1)
+        print ("You find a shot gun and three shot gun shells")
+        time.sleep(1)
+        shotgun = True
+        score = 3
+    elif choice == "STORE":
+        time.sleep(1)
+        print("You enter the store, rummaging around ... ")
+        time.sleep(1)
+        print ("You stock up on canned food, drink, first aid and find a gun with 4 bullets")
+        time.sleep(1)
+        gun = True
+        score = 3
+    elif choice == "BARN":
+        time.sleep(1)
+        print("You enter the barn where you could hear sounds of groaning ... ")
+        time.sleep(1)
+        print ("You encounter a mob of zombies")
+        time.sleep(1)
+        print ("You didn't survive")
+    else:
+        time.sleep(1)
+        print("You enter the store, climbing down the escalater you slip on some blood ... ")
+        time.sleep(1)
+        print ("You fall to your death")
+        time.sleep(1)
+        print ("You didn't survive")
