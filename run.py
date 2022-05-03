@@ -1,6 +1,7 @@
 # import pyfiglet module
 import pyfiglet
 import time
+from random import randint
 
 #GLOBAL VARIABLE DECLARATION
 shotgun = False
@@ -133,3 +134,50 @@ if score == 2:
         print ("You fall to your death")
         time.sleep(1)
         print ("You didn't survive")
+
+#Part 3 only happens if you have a score of 3 now
+if score == 3:
+    time.sleep(1)
+    print ("Chapter 3: ... ") 
+    time.sleep(1)
+
+    print ("You make it to the perimeter of the safe haven")
+    time.sleep(1)
+    print ("Only one problem ... ")
+    time.sleep(1)
+    print ("Two Zombies")
+    time.sleep(1)
+    print ("")
+    time.sleep(1)
+    
+    if shotgun == True:
+        print ("You have three shots to hit two targets")
+        shots = 3
+    else:
+        print ("You have four shots to hit two targets")
+        shots = 4
+
+    time.sleep(1)
+    zombies = 2
+    while shots > 0 and zombies > 0:
+        hit = randint(1, 3)
+
+        if hit == 1 or hit == 2:
+            time.sleep(1)
+            print ("A lucky shot, you killed a zombie")
+            shots = shots - 1
+            zombies = zombies - 1
+        else:
+            time.sleep(1)
+            print ("You fire a shot, but miss")
+            shots = shots - 1
+
+    if zombies == 0:
+        print ("You made it!")
+        score = 5
+    else:
+        print ("You fired all your shots and now the zombies are moving closer")
+        score = 4
+
+#Step 4: Call main menu procedure
+startGame()
