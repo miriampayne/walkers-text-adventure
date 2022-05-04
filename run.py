@@ -1,38 +1,40 @@
-# import pyfiglet module
-import pyfiglet
-import time
+# import random
 from random import randint
 
-#Start Game
-def startGame():
+# import pyfiglet module
+import pyfiglet
 
+# Start Game
+
+def start_game():
+    
     shotgun = False
     gun = False
     score = 0
-    
-    welcome = pyfiglet.figlet_format("Walkers")
+
+    welcome = pyfiglet.figlet_format("Walkers", justify="center")
     print(welcome)
-    print("A Zombie Apocalypse Text Adventure by Miriam Payne")
+    print("Zombie Apocalypse Text Adventure Game Created by Miriam Payne".center(80) + "\n")
     name = input("Please confirm your name:\n")
     age = int(input("Please confirm your age:\n"))
 
     if age > 0 and age < 12:
         print("You're young ... chances of survival are slim ... use size and speed to your advantage")
-    elif age >= 12 and age <75:
+    elif age >= 12 and age < 75:
         print("You're going to need a good aim ... fair survival if you're a good shot")
     elif age >= 75:
         print("You're as slow as the walkers ... I hate to break it to you but your chances are slim")
-
-    # time.sleep(1)
     input("Press Enter To Continue...")
 
+    # Chapter 1:
     print("Mission: Survive or die trying")
     print("Chapter 1")
+    input("Press Enter To Continue...")
 
     print("You walk into an abandoned Dublin city center tower block car park")
     input("Press Enter To Continue...")
 
-    print("A dodgy vaccine for the pandemic has turned 95% the population into a flesh eating zombies outbreak.")
+    print("A dodgy vaccine for the pandemic has turned 95% the population into a flesh eating zombie outbreak.")
     input("Press Enter To Continue...")
 
     print("Your sat nav shows you are 8 miles from a safe haven")
@@ -43,34 +45,54 @@ def startGame():
 
     input("Press Enter To Continue...")
 
-    score = stage_one()
+    score = stage_one(age)
     score, shotgun = stage_two(score)
     score = stage_three(score, shotgun)
 
-    if score > 1:
-        print("Well done you win")
+    # win or lose function 
+    win = pyfiglet.figlet_format("WINNER", font = "digital" )
+    if score >= 5:
+        print(win)
     else:
-        print("You suck at this game")
+        print("You're a bit rubbish at this game, better luck next time!")
 
-    # win or lose function
-
-    
-# Define Function - Retry
 def retry_game():
-    # Ask user whether they want to retry
-
-    # return True/False
-
+    """
+    This function is called when the player is
+    offered a retry of the game.
+    """
+    print("Would you like to go again? Reply (Y)ES or (N)O")
+    answer = input("").lower().strip()
+    while answer not in [YES, NO, Y, N]:
+        print_sleep(
+            "Invalid input. Please try again.", 2
+            )
+        answer = input("").lower().strip()
+    if answer in [YES, Y]:
+        print_sleep(
+            "Great! lets go again.", 2
+            )
+        retry_game()
+    elif answer in [NO, N]:
+        print_sleep(
+            "See you again next time!", 2
+            # will end game here.
+            )
 
 # Step 1: Get first action
-def stage_one():
+def stage_one(age):
+    """
+    This function is called
+    for user input to stay and fight
+    or to run and hide, score depends on age.
+    """
     action = input("(F)ight or (R)un?\n").upper()
     while action not in ["FIGHT", "RUN", "F", "R"]:
         input("Press Enter To Continue...")
         print("That is not a valid action")
         action = input("Fight or Run?\n").upper()
 
-    if action == "FIGHT":
+    if action == "FIGHT" or action == 'F':
         if age >= 12:
             print("Your youthfulness helps you avoid being chomped")
             input("Press Enter To Continue...")
@@ -82,8 +104,8 @@ def stage_one():
             print("A combination of old age and slow reactions cause you to be bitten")
             print("You're too old to be fighting zombies")
             score = 1
-    elif action == "RUN":
-        if age <=12:
+    elif action == "RUN" or action == 'R':
+        if age <= 12:
             print("You run from the zombie, but are too slow")
             input("Press Enter To Continue...")
             print("This walker clearly has some agility left in them and catches up quick")
@@ -96,8 +118,12 @@ def stage_one():
 
     return score
 
-# Step 2 only happens if you have survived with a score of 2 now
+# Chapter 2 
 def stage_two(score):
+    """
+    This function is only called
+    if you have survived with a score of 2 now.
+    """
     if score == 2:
         input("Press Enter To Continue...")
         print("Chapter 2: ... ") 
@@ -106,14 +132,14 @@ def stage_two(score):
         print("You come across an abandoned house, an old barn and a boarded-up store")
 
         input("Press Enter To Continue...")
-        choice = input("Do you enter the house, barn or the store?\n").upper()
+        choice = input("Do you enter the (H)ouse, (B)arn or the (S)tore?\n").upper()
 
-        while choice not in["HOUSE", "BARN", "STORE"]:
+        while choice not in["HOUSE", "BARN", "STORE", "H", "B", "S"]:
             input("Press Enter To Continue...")
             print("Sorry. I don't understand")
             choice = input("Do you enter the house or the barn or the store?\n").upper()
 
-        if choice == "HOUSE":
+        if choice == ["HOUSE", "H"]:
             input("Press Enter To Continue...")
             print("You enter the house, rummaging around ... ")
             input("Press Enter To Continue...")
@@ -121,7 +147,7 @@ def stage_two(score):
             input("Press Enter To Continue...")
             shotgun = True
             score = 3
-        elif choice == "STORE":
+        elif choice == ["STORE", "S"]:
             input("Press Enter To Continue...")
             print("You enter the store, rummaging around ... ")
             input("Press Enter To Continue...")
@@ -129,7 +155,7 @@ def stage_two(score):
             input("Press Enter To Continue...")
             gun = True
             score = 3
-        elif choice == "BARN":
+        elif choice == ["BARN", "B"]:
             input("Press Enter To Continue...")
             print("You enter the barn where you could hear sounds of groaning ... ")
             input("Press Enter To Continue...")
@@ -146,8 +172,12 @@ def stage_two(score):
 
     return (score, shotgun)
 
-#Part 3 only happens if you have a score of 3 now
+# Chapter 3
 def stage_three(score, shotgun):
+    """
+    This function is only called
+    if you have survived with a score of 3 now.
+    """
     if score == 3:
         input("Press Enter To Continue...")
         print("Chapter 3: ... ") 
@@ -158,7 +188,6 @@ def stage_three(score, shotgun):
         print("Only one problem ... ")
         input("Press Enter To Continue...")
         print("Two Zombies")
-        input("Press Enter To Continue...")
         print("")
         input("Press Enter To Continue...")
         
@@ -195,8 +224,7 @@ def stage_three(score, shotgun):
 
 # Step 0: Call main menu procedure
 if __name__ == '__main__':
-    
     while True:
-        startGame()
+        start_game()
         if not retry_game():
             exit(1)
