@@ -136,6 +136,9 @@ Once the story was complete, I recruited some people to test it. I asked them ea
 
 Some users found that the win messages were inconsistant which is detailed in unresolved bugs.
 
+Example:
+"its good but a few answers dont work if there is any whitespace. suggest you add .strip() when taking user inputs! will be great then. But i died twice .. boo"
+
 # Code Validation 
 
 I ran my Python code through [PEP8 Online Validator](http://pep8online.com/checkresult#) and corrected all following'errors' in my code:
@@ -236,5 +239,7 @@ The following projects were also used as inspiration:
 * https://github.com/JamesFahey/zombie-survival
 
 Thanks also to fellow Code Institute student [Dan Kelly](https://github.com/dkelly255) on Slack for the tip on using Heroku API key as password to login in via terminal.
+
+And as per Code Institute's Peer Review Slack channel: Daniel_C_5p provided user story.
 
 # Thanks 
