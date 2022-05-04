@@ -63,30 +63,29 @@ def win(score):
     This function is
     called when the player wins!
     """
-    win = pyfiglet.figlet_format("WINNER", font="digital")
+    winner = pyfiglet.figlet_format("WINNER", font="digital")
+    loser = pyfiglet.figlet_format("LOSER", font="digital")
     if score >= 5:
-        print(win)
+        print(winner)
     else:
-        print("You're a bit rubbish at this game, better luck next time!")
-
-
+        print(loser)
+​
+​
 def retry_game():
     """
     This function is called when the player is
     offered a retry of the game.
     """
     print("Would you like to go again? Reply (Y)ES or (N)O")
-    answer = input("").lower().strip()
-    while answer not in [YES, NO, Y, N]:
-        print(
-            "Invalid input. Please try again.", 2
-            )
-        answer = input("").lower().strip()
-    if answer in [YES, Y]:
-        print("Great! lets go again.", 2)
+    answer = input("").upper().strip()
+    while answer not in ["YES", "NO", "Y", "N"]:
+        print("Invalid input. Please try again.")
+        answer = input("").upper().strip()
+    if answer in ["YES", "Y"]:
+        print("Great! lets go again.")
         retry_game()
-    elif answer in [NO, N]:
-        print("See you again next time!", 2)
+    elif answer in ["NO", "N"]:
+        print("See you again next time!")
 
 
 def stage_one(age):
@@ -224,6 +223,6 @@ def stage_three(score, shotgun):
 # Step 0: Call main menu procedure
 if __name__ == '__main__':
     while True:
-        start_game()
+        win(start_game())
         if not retry_game():
             exit(1)
