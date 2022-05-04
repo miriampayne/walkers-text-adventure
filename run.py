@@ -7,23 +7,27 @@ import pyfiglet
 # Start Game
 
 def start_game():
-    
+    """
+    This function is called when the player is
+    at start of game and includes Intro.
+    """
     shotgun = False
     gun = False
     score = 0
 
     welcome = pyfiglet.figlet_format("Walkers", justify="center")
     print(welcome)
-    print("Zombie Apocalypse Text Adventure Game Created by Miriam Payne".center(80) + "\n")
+    print("Zombie Apocalypse Text Adventure Game".center(80) + "\n")
+    print("Created by Miriam Payne".center(80) + "\n")
     name = input("Please confirm your name:\n")
     age = int(input("Please confirm your age:\n"))
 
     if age > 0 and age < 12:
-        print("You're young ... chances of survival are slim ... use size and speed to your advantage")
+        print("You're young ... chances of survival are slim ... ")
     elif age >= 12 and age < 75:
-        print("You're going to need a good aim ... fair survival if you're a good shot")
+        print("I hope you're a good shot")
     elif age >= 75:
-        print("You're as slow as the walkers ... I hate to break it to you but your chances are slim")
+        print("You're as slow as the walkers ... chances are slim")
     input("Press Enter To Continue...")
 
     # Chapter 1:
@@ -34,7 +38,7 @@ def start_game():
     print("You walk into an abandoned Dublin city center tower block car park")
     input("Press Enter To Continue...")
 
-    print("A dodgy vaccine for the pandemic has turned 95% the population into a flesh eating zombie outbreak.")
+    print("Outbreak has turned 95% the population into zombies aka walkers")
     input("Press Enter To Continue...")
 
     print("Your sat nav shows you are 8 miles from a safe haven")
@@ -101,14 +105,14 @@ def stage_one(age):
         else:
             print("You attack")
             input("Press Enter To Continue...")
-            print("A combination of old age and slow reactions cause you to be bitten")
+            print("Combo of old age and slowness cause you to be bitten")
             print("You're too old to be fighting zombies")
             score = 1
     elif action == "RUN" or action == 'R':
         if age <= 12:
             print("You run from the zombie, but are too slow")
             input("Press Enter To Continue...")
-            print("This walker clearly has some agility left in them and catches up quick")
+            print("This walker has some agility and catches up quick")
             score = 1
         else:
             print("You run from the zombie")
@@ -129,7 +133,7 @@ def stage_two(score):
         print("Chapter 2: ... ") 
         input("Press Enter To Continue...")
 
-        print("You come across an abandoned house, an old barn and a boarded-up store")
+        print("You come across an old abandoned house, barn and store")
 
         input("Press Enter To Continue...")
         choice = input("Do you enter the (H)ouse, (B)arn or the (S)tore?\n").upper()
@@ -151,20 +155,20 @@ def stage_two(score):
             input("Press Enter To Continue...")
             print("You enter the store, rummaging around ... ")
             input("Press Enter To Continue...")
-            print("You stock up on canned food, drink, first aid and find a gun with 4 bullets")
+            print("You stock up on supplies and find a gun with 4 bullets")
             input("Press Enter To Continue...")
             gun = True
             score = 3
         elif choice == ["BARN", "B"]:
             input("Press Enter To Continue...")
-            print("You enter the barn where you could hear sounds of groaning ... ")
+            print("You enter the barn where you could hear odd noises ... ")
             input("Press Enter To Continue...")
             print("You encounter a mob of zombies")
             input("Press Enter To Continue...")
             print("You didn't survive")
         else:
             input("Press Enter To Continue...")
-            print("You enter the store, climbing down the escalater you slip on some blood ... ")
+            print("You enter the store and slip going down the escalater ")
             input("Press Enter To Continue...")
             print("You fall to your death")
             input("Press Enter To Continue...")
@@ -217,7 +221,7 @@ def stage_three(score, shotgun):
             print("You made it!")
             score = 5
         else:
-            print("You fired all your shots and now the zombies are moving closer")
+            print("You fired all shots and the zombies are enclosing")
             score = 4
     return score
 
