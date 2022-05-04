@@ -8,7 +8,6 @@ import os
 import pyfiglet
 
 
-# https://www.geeksforgeeks.org/clear-screen-python/
 def clear():
     """
     Function for clearing terminal.
@@ -91,7 +90,7 @@ def retry_game():
         answer = input("").upper().strip()
     if answer in ["YES", "Y"]:
         print("Great! lets go again.")
-        retry_game()
+        start_game()
     elif answer in ["NO", "N"]:
         print("See you again next time!")
 

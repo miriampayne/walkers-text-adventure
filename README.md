@@ -8,7 +8,7 @@ This is a Python-based text adventure game where the user will have to survive t
 
 The game is deployed on Heroku and is strictly terminal-based for user interaction.
 
-![Gif of Game Flow](/docs/images/Screen_Recording_AdobeCreativeCloudExpress.gif)
+![Gif of Game Flow](/docs/images/Screen_Recording_2022-05-04_at_08_50_16_AdobeCreativeCloudExpress.gif)
 
 ## Strategy 
 
@@ -87,11 +87,11 @@ The home page is the only page on the application. The terminal design was creat
 
 ![Personalised Features](/docs/images/personalised_features.png)
 
-- Winner Message
-![Winner Message image](/docs/images/winner.png)
+- Winner Message on success of survival along with retry option feature
+![Winner Message and Retry Message image](/docs/images/winner.png)
 
-- Loser Message
-![Loser Message image](/docs/images/loser.png)
+- Loser Message on failed mission along with retry option feature
+![Loser Message and Retry Message image](/docs/images/loser.png)
 
 - Clear Terminal
 A last minute addition and very useful feature is the [clear function for OS system](https://www.geeksforgeeks.org/clear-screen-python/)
@@ -115,16 +115,26 @@ Throughout the planning, design, testing, and deployment of the website, I have 
     - Used to create my flow chart of the story.
 - [Pep8](http://pep8online.com/):
     - Used to check my code against Pep8 requirements.
+- [Pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/#:~:text=pyfiglet%20takes%20ASCII%20text%20and,pyfiglet%20module%20%3A%20pip%20install%20pyfiglet)
+    - Used to add design to some aspects such as welcome intro, winner and loser messages
+- [OS Clear](https://www.geeksforgeeks.org/clear-screen-python/)
+    - Used to clear the terminal for cleaner viewing of print statements
 
 # Testing
 
 ## Functionality 
 
-Once I had completed the story and was certain I was making no changes to it, I got a bunch of people I know to test it. I asked them each to specifically go down certain paths so I could make sure all the paths worked and integrated how they should. I also needed to know if the game was able to beat. People of all ages ranging from 17 - 55 were easily able to navigate through the game with ease.
+Once the story was complete, I recruited some people to test it. I asked them each to specifically go down certain paths so I could make sure all the paths worked and integrated how they should. I was particularly interested to learn which paths were encountering an unexpected end. I located some issues where the user isn't always informed whether they have won or lost
 
 ## User Testing Stories
 
+* Nieces and nephew
+* Work colleagues
+* Parents
+* Siblings
+* Code Insitute Peer Review via Slack Channel
 
+Some users found that the win messages were inconsistant which is detailed in unresolved bugs.
 
 # Code Validation 
 
@@ -136,11 +146,11 @@ I ran my Python code through [PEP8 Online Validator](http://pep8online.com/check
 * missing python function docstring
 * missing blank lines between functions
 
-![Image of no errors in PEP8 Online](/docs/images/PEP8online.png)
+![Image of no errors in PEP8 Online](/docs/images/PEP8OnlineValidation.png)
 
 # Peer Review
 
-Fellow Code Institute student Dan Culley
+Code Insitute Peer Review via Slack Channel
 
 # Performance Testing 
 
@@ -154,10 +164,11 @@ Fixes:
 * Added age to fight or run action function which prevented the game breaking at that point
 * Fixed incorrect syntax on input functions, there was an accidental space between input and parenthesis
 * Fixed issue with user entering invalid commands
+* Even if select (H)ouse or (B)arn, the game navigates to Shop
 
 Unsolved Bugs:
-* Even if I select (H)ouse or (B)arn, the game navigates to Shop
-* Retry function is not functioning on game over
+
+* Retry and win function messages are not functioning as expected in all cases
 
 # Deployment
 
