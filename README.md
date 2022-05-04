@@ -80,12 +80,22 @@ As a returning user, I want to…
 
 The home page is the only page on the application. The terminal design was created and given to me by Code Institue. 
 
-- I added a striking Welcome/Intro using pyfiglet:
+- I added a striking Welcome/Intro using [pyfiglet](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/#:~:text=pyfiglet%20takes%20ASCII%20text%20and,pyfiglet%20module%20%3A%20pip%20install%20pyfiglet):
 ![Welcome heading image](/docs/images/welcome_screen.png)
 
 - Personalised features requesting input of name and age of user: 
 
 ![Personalised Features](/docs/images/personalised_features.png)
+
+- Winner Message
+![Winner Message image](/docs/images/winner.png)
+
+- Loser Message
+![Loser Message image](/docs/images/loser.png)
+
+- Clear Terminal
+A last minute addition and very useful feature is the [clear function for OS system](https://www.geeksforgeeks.org/clear-screen-python/)
+This clears the terminal on each input from user to keep things clean and easier to read
 
 # Technology Used in design
 
