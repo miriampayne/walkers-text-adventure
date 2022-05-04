@@ -7,6 +7,8 @@ import os
 # import pyfiglet module
 import pyfiglet
 
+
+# https://www.geeksforgeeks.org/clear-screen-python/
 def clear():
     """
     Function for clearing terminal.
@@ -31,7 +33,12 @@ def start_game():
     print("Zombie Apocalypse Text Adventure Game".center(80) + "\n")
     print("Created by Miriam Payne".center(80) + "\n")
     name = input("Please confirm your name:\n")
-    age = int(input("Please confirm your age:\n"))
+    while True:
+        try:
+            age = int(input("Please confirm your age:\n"))
+            break
+        except ValueError:
+            print("That's not a number!")
 
     if age > 0 and age < 12:
         print("You're young ... chances of survival are slim ... ")
@@ -56,6 +63,7 @@ def start_game():
     score = stage_one(age)
     score, shotgun = stage_two(score)
     score = stage_three(score, shotgun)
+    return score
 
 
 def win(score):
@@ -69,8 +77,8 @@ def win(score):
         print(winner)
     else:
         print(loser)
-​
-​
+
+
 def retry_game():
     """
     This function is called when the player is
@@ -99,7 +107,7 @@ def stage_one(age):
         clear()
         print("\nThat is not a valid action")
         action = input("Fight or Run?\n").upper()
-​
+
     if action == "FIGHT" or action == 'F':
         if age >= 12:
             print("\nYour youthfulness helps you avoid being chomped")
@@ -124,7 +132,7 @@ def stage_one(age):
             clear()
             print("Your athletic legs carry you to safety")
             score = 2
-​
+
     return score
 
 
@@ -139,13 +147,13 @@ def stage_two(score):
         print("Chapter 2")
         clear()
         print("You come across an old abandoned house, barn and store")
-​
+
         choice = input("\nEnter (H)ouse, (B)arn or (S)tore? ").upper()
-​
+
         while choice not in ["HOUSE", "BARN", "STORE", "H", "B", "S"]:
             print("Sorry. I don't understand, please try again!")
             choice = input("Enter house or barn or store?\n").upper()
-​
+
         if choice in ["HOUSE", "H"]:
             print("\nYou enter the house, rummaging around ... ")
             clear()
@@ -172,10 +180,10 @@ def stage_two(score):
             print("You fall to your death")
             clear()
             print("You didn't survive")
-​
+
     return (score, shotgun)
-​
-​
+
+
 def stage_three(score, shotgun):
     """
     This function is only called
@@ -196,11 +204,11 @@ def stage_three(score, shotgun):
         else:
             print("You have four shots to hit two targets")
             shots = 4
-​
+
         zombies = 2
         while shots > 0 and zombies > 0:
             hit = randint(1, 3)
-​
+
             if hit in [1, 2]:
                 clear()
                 print("A lucky shot, you killed a zombie")
